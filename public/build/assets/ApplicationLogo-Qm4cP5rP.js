@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-x3n3nnut.js";import{o as t,g as s}from"./app-R7-4oB6V.js";const c="/build/assets/LogoRicardo-transparant-_5gzZSfo.png",r={},e={src:c,alt:"LogoWebsite",class:"h-16 w-auto ml-4"};function a(n,_){return t(),s("img",e)}const m=o(r,[["render",a]]);export{m as A};
