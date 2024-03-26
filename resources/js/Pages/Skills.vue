@@ -9,12 +9,12 @@ const skills = [
   { skillname: 'JavaScript/VueJS', percentage: 65 },
   { skillname: 'C#', percentage: 90 },
   { skillname: 'MSSQL/MySQL', percentage: 75 },
-  { skillname: 'Docker', percentage: 25 },
+  { skillname: 'Docker', percentage: 50 },
   { skillname: 'PHP/Laravel', percentage: 60 },
-  { skillname: 'Python', percentage: 50 },
+  { skillname: 'Python', percentage: 65 },
   { skillname: 'Figma', percentage: 80 },
-  { skillname: 'Photoshop', percentage: 65 },
-  { skillname: 'Devops', percentage: 85 },
+  { skillname: 'Photoshop', percentage: 70 },
+  { skillname: 'AzureDevops', percentage: 85 },
   { skillname: 'Office365', percentage: 80 },
 ];
 

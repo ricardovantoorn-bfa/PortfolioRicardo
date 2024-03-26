@@ -181,7 +181,7 @@ const showingNavigationDropdown = ref(false);
                             <!-- Copyright -->
                             <div>&copy; Ricardo van Toorn - All rights reserved 2024.</div>
                             <!-- Telefoonnummer -->
-                            <div><a href="tel:0614882003" class="text-white hover:text-blue-600">(+31) 6 14882003</a></div>
+                            <div><a href="tel:+31614882003" class="text-white hover:text-blue-600">(+31) 6 14882003</a></div>
                             <!-- E-mail -->
                             <div><a href="mailto:ricardo.vantoorn@bluefieldagency.com"
                                     class="text-white hover:text-blue-600">ricardo.vantoorn@bluefieldagency.com</a></div>

@@ -27,7 +27,7 @@ import { Head } from '@inertiajs/vue3';
                         <span class="results-text-blue">Gemiddelde </span> - {{ averageGradePO }}
                     </p>
                     <button class="bg-gray-300 hover:bg-gray-400 p-2 rounded-lg"
-                        @click="BerekenGemiddelde('gradesPO', 'averageGradePO')">Bereken Gemiddelde</button>
+                        @click="calculateAverageWithInterval('gradesPO', 'averageGradePO')">Bereken Gemiddelde</button>
                 </div>
             </div>
             <!-- Realiseren Resultaten -->
@@ -50,7 +50,7 @@ import { Head } from '@inertiajs/vue3';
                         <span class="results-text-blue">Gemiddelde </span> - {{ averageGradeREA }}
                     </p>
                     <button class="bg-gray-300 hover:bg-gray-400 p-2 rounded-lg"
-                        @click="BerekenGemiddelde('gradesREA', 'averageGradeREA')">Bereken Gemiddelde</button>
+                        @click="calculateAverageWithInterval('gradesREA', 'averageGradeREA')">Bereken Gemiddelde</button>
                 </div>
             </div>
 
@@ -74,7 +74,7 @@ import { Head } from '@inertiajs/vue3';
                         <span class="results-text-blue">Gemiddelde </span> - {{ averageGradeTV }}
                     </p>
                     <button class="bg-gray-300 hover:bg-gray-400 p-2 rounded-lg"
-                        @click="BerekenGemiddelde('gradesTV', 'averageGradeTV')">Bereken Gemiddelde</button>
+                        @click="calculateAverageWithInterval('gradesTV', 'averageGradeTV')">Bereken Gemiddelde</button>
                 </div>
             </div>
 
@@ -95,14 +95,14 @@ import { Head } from '@inertiajs/vue3';
                         <span class="results-text-blue">Gemiddelde </span> - {{ averageGradeCOM }}
                     </p>
                     <button class="bg-gray-300 hover:bg-gray-400 p-2 rounded-lg"
-                        @click="BerekenGemiddelde('gradesCOM', 'averageGradeCOM')">Bereken Gemiddelde</button>
+                        @click="calculateAverageWithInterval('gradesCOM', 'averageGradeCOM')">Bereken Gemiddelde</button>
                 </div>
             </div>
         </div>
     </AuthenticatedLayout>
 </template>
 
-<!-- methof om gemiddelde te berekenen per vak -->
+<!-- method om gemiddelde te berekenen per vak -->
 <script>
 export default {
     mounted() {
@@ -126,6 +126,20 @@ export default {
             let grades = this[gradesProperty];
             let sum = grades.reduce((a, b) => a + b, 0);
             this[averageGradeProperty] = (sum / grades.length).toFixed(1);
+        },
+        calculateAverageWithInterval(gradesProperty, averageGradeProperty) {
+            const grades = this[gradesProperty];
+            let sum = 0;
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < grades.length) {
+                    sum += grades[index];
+                    this[averageGradeProperty] = (sum / (index + 1)).toFixed(1);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 100);
         }
     }
 }
